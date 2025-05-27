@@ -2,7 +2,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
-    swcMinify: false, // <--- YOU MUST CHANGE THIS FROM `true` TO `false`
+    
     images: {
         domains: [
             'open.cruip.com',
