@@ -17,7 +17,7 @@ function MyApp({Component, pageProps} : AppProps) {
     const [mode,
         setMode] = useState < 'light' | 'dark' > ('dark');
     const getDesignTokens = ThemeHook(mode, setMode);
-    const Theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
+    const Theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode, getDesignTokens]);
 
     const colorMode = useMemo(() => ({
         mode,

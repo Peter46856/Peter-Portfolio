@@ -68,7 +68,7 @@ function Footer() {
                                  Hello, my name is Peter Juma Mutiso. 
                                  I am a Kenyan software developer specializing in web development, with a strong focus on building scalable, user-centric digital solutions. 
                                  My passion lies in leveraging technology to empower communities and businesses across Africa by addressing local challenges with innovative and practical applications. 
-                                 With a commitment to continuous learning and excellence, I aim to contribute meaningfully to the continent's growing digital landscape through impactful and sustainable software development.
+                                 With a commitment to continuous learning and excellence, I aim to contribute meaningfully to the continent&apos;s growing digital landscape through impactful and sustainable software development.
 
                             </Typography>
                         </Box>

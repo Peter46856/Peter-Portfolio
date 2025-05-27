@@ -19,7 +19,7 @@ const Hero = () => {
     useEffect(() => {
         HeroSectionAnimation(q)
 
-    }, [])
+    }, [q])
 
     return (
         <Container
@@ -72,7 +72,7 @@ const Hero = () => {
                             maxWidth: '570px',
                             fontWeight: '300'
                         }}>
-                          Hi, I'm Peter Juma Mutiso, a Computer Science student at Multimedia University of Kenya. 
+                          Hi, I&apos;m Peter Juma Mutiso, a Computer Science student at Multimedia University of Kenya. 
                           Together with my talented team, I build robust websites and intuitive web/mobile apps that help businesses grow and thrive in the digital world. 
                           Our goal is to translate your unique needs and desires into clean, modern, and effective digital experiences using cutting-edge tech.
                         </Typography>

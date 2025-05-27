@@ -73,6 +73,7 @@ const Home: NextPage<HomeProps> = ({projectsArray, iconsArray}) => {
                 <Projects projectsArray={projectsArray} />
                 <About/>
                 <CTA/>
+                
 
                 <Box
                     ref={ball}

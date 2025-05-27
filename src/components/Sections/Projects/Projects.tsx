@@ -36,7 +36,7 @@ const Projects = ({projectsArray} : IProjects[] | any) => {
                 })
             }
         }, 100)
-    }, [])
+    }, [projectsArray])
 
     return (
         <Box sx={{

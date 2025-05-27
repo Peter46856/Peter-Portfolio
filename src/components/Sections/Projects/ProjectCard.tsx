@@ -2,6 +2,7 @@ import {Box, Typography, Button} from '@mui/material';
 import {useEffect, useRef, useState} from 'react';
 import {IProjectCard} from '../../../Types/Types';
 import {btnStyles} from '../Hero/Hero';
+import Image from 'next/image';
 
 const ProjectCard = ({
     isReversed,
@@ -67,7 +68,8 @@ const ProjectCard = ({
                 position: 'relative'
             }}>
 
-                <img alt='Project Image' className='img1' src={`${img}`}/>
+                <Image alt='Project Image' className='img1' width='500' // Replace with desired width in pixels
+                    height='300'  src={`${img}`}/>
             </Box>
             <Box
                 ref={ref}

@@ -51,7 +51,7 @@ const Contact = () => {
         if (ref.current) {
             HeroSectionAnimation(q);
         }
-    }, []);
+    }, [q]);
 
     const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -173,7 +173,7 @@ const Contact = () => {
                                 pt: '1em',
                                 fontWeight: '600'
                             }}>
-                            Let's achieve the impossible together
+                            Let&apos;s achieve the impossible together
                         </Typography>
                         <Typography
                             variant='h2'
@@ -186,7 +186,7 @@ const Contact = () => {
                                 maxWidth: '570px',
                                 fontWeight: '300'
                             }}>
-                            If you need help or have some questions, I'll be there ready and happy to help.
+                            If you need help or have some questions, I&apos;ll be there ready and happy to help.
                         </Typography>
                     </Box>
 

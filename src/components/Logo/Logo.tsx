@@ -2,6 +2,8 @@ import {Box} from '@mui/material'
 import CustomLink from '../Mui/CustomLink'
 import {useRouter} from 'next/router';
 import gsap from 'gsap';
+import Image from 'next/image'
+
 
 const Logo = ({toggleDrawer, colorMode, color} : any) => {
     const router = useRouter()
@@ -25,13 +27,16 @@ const Logo = ({toggleDrawer, colorMode, color} : any) => {
             alignItems: 'center'
         }}>
 
-            <img
+            <Image
                 className={`${colorMode.mode === 'dark'
                 ? 'logoImg '
                 : ''}small`}
                
                 src="https://res.cloudinary.com/dr4ssexud/image/upload/v1747987472/default_hjvzpb.png"
-                alt=""/>
+                alt="logo"
+                 width='30' 
+                 height='30'/>
+                 
             <CustomLink color={color} fontWeight='600' text='Mutiso Juma Peter' href='/'/>
         </Box>
     )
