@@ -37,8 +37,7 @@ const SocialMediaIcon = ({title, svg, href, filter} : ISocialMedia) => {
                         className={`${filter
                         ? 'filter '
                         : ''} icon`}
-                        width='100%'
-                        height='100%'
+                        fill
                         src={svg || ''}/>
                 </Box>
                 <Typography
