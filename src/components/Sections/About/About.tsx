@@ -83,7 +83,7 @@ const About = () => {
                             }
                         }}
                             fontWeight='600'>
-                            About Me, Im Vito Medlej
+                            About Me, Im Peter Juma Mutiso
                         </Typography>
                         <Typography
                             variant='h2'
@@ -94,7 +94,7 @@ const About = () => {
                                 sm: '1em'
                             }
                         }}>
-                      A 20-year-old Lebanon-based software developer. I first started developing games using Unity3D, but soon realized I preferred web and mobile app development, and I&apos;ve been building and working on that for the past 3 years now.
+                      A 20-year-old Kenya-based software developer. I first started developing web pages using HTML and JavaScript, And now  I realized i have a lot of passion in  web and mobile app development, and I&apos;ve been building and working on that for the past 3 years now.
 
                         </Typography>
                     </Box>
@@ -108,11 +108,11 @@ const About = () => {
                             },
                             pb:'.5em'
                         }}>
-                      Being self-taught made me appreciate education; thus, I&apos;m studying Management Information Systems simultaneously. Business and technology are both my passions.
+                      Being a computer science student - Multimedia University of Kenya, has made me appreciate Technology; thus, Im studying Various software development frameworks mainly for  Information Systems simultaneously. Business and technology are both my passions.
 
                         </Typography>
                     <ReadMore>
-                    Aside from working hard, I tend to enjoy simple things like reading, petting cats, hitting the gym, and other things we humans do. If any of what I said seems interesting, then please do not hesitate to send me a message.
+                    Aside from working hard, I tend to enjoy simple things like reading, gaming, sports, and many ,more extra caricullar things . Finally am a teamwork enthusiast, like learning news things from friends and other experts therefore if interesting with working along with me, then please do not hesitate to send me a message here.
                     </ReadMore>
                 </Grid>
             </Grid>

@@ -1,0 +1,73 @@
+/* Default styles for small screens (vertical layout) */
+.blogCard {
+  border: 1px solid #ccc;
+  padding: 15px;
+  display: flex;
+  flex-direction: column; /* Stacks items vertically by default */
+  min-width: 90vw;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  margin: 20px auto; /* Center the card and add some margin */
+}
+
+.blogCardContent {
+  display: flex;
+  flex-direction: column; /* Stacks image and text content wrapper */
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.blogImageContainer {
+  width: 100%;
+  margin-bottom: 15px; /* Space below image on small screens */
+  max-height: 250px; /* Limit image height on small screens */
+  overflow: hidden; /* Hide overflow if image is taller than max-height */
+}
+
+.blogImageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blogTextContentWrapper {
+  width: 100%; /* Takes full width on small screens */
+  display: flex; /* Make it a flex container */
+  flex-direction: column; /* Stack title, description, and date */
+}
+
+.blogTitle {
+  margin-bottom: 10px; /* Space below title */
+}
+
+.blogDescription {
+  margin-bottom: 10px; /* Space below description */
+}
+
+/* Media query for large screens (horizontal layout) */
+@media (min-width: 768px) {
+  .blogCardContent {
+    flex-direction: row; /* Image and text content wrapper side-by-side */
+    align-items: flex-start; /* Align items to the top */
+  }
+
+  .blogImageContainer {
+    min-width: 40%;
+    max-width: 40%; /* Image takes 40% of the card width */
+    margin-right: 25px; /* Space to the right of the image */
+    margin-bottom: 0; /* Remove bottom margin */
+    max-height: none; /* Remove height limit on large screens */
+  }
+
+  .blogImageContainer img {
+    height: auto; /* Reset image height on large screens */
+  }
+
+  .blogTextContentWrapper {
+    flex: 1; /* Text content wrapper takes remaining space */
+    max-width: 60%; /* Limit its width */
+    /* flex-direction: column is already set, so title, description, date stay stacked */
+  }
+}

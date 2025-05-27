@@ -1,90 +1,144 @@
-import {Box} from '@mui/material'
-import type {NextPage}
-from 'next'
-import Experience from '../src/components/Sections/TechTools/TechTools'
-import Hero from '../src/components/Sections/Hero/Hero'
-import Perks from '../src/components/Sections/Perks/Perks'
+import {Box, Backdrop, CircularProgress, Typography} from '@mui/material';
+import type {NextPage} from 'next';
+import Experience from '../src/components/Sections/TechTools/TechTools';
+import Hero from '../src/components/Sections/Hero/Hero';
+import Perks from '../src/components/Sections/Perks/Perks';
 import Projects from '../src/components/Sections/Projects/Projects';
-import CTA from '../src/components/Sections/CallToAction/CTA'
-import {useEffect, useRef} from 'react';
+import CTA from '../src/components/Sections/CallToAction/CTA';
+import {useEffect, useRef, useState} from 'react';
 import CursorAnimation from '../src/gsap/CursorAnimation';
 import About from '../src/components/Sections/About/About';
-import Layout from '../Layout/Layout'
+import Layout from '../Layout/Layout';
+import Head from 'next/head';
 
-const Home : NextPage = ({projectsArray, iconsArray} : any) => {
-    const ball = useRef()
+interface HomeProps {
+    projectsArray: any[];
+    iconsArray: any[];
+}
+
+const Home: NextPage<HomeProps> = ({projectsArray, iconsArray}) => {
+    const ball = useRef<HTMLDivElement>(null);
+    const [pageLoading, setPageLoading] = useState(true);
 
     useEffect(() => {
-        if (ball && ball.current) {
-            CursorAnimation(ball.current)
+        // Dynamically import AOS to avoid SSR issues if not handled globally in _app.tsx
+        // Ensure AOS is installed: npm install aos OR yarn add aos
+        try {
+            const AOS = require('aos');
+            AOS.init({ once: true });
+        } catch (error) {
+            console.warn("AOS not found. Please install with 'npm install aos' or 'yarn add aos'.");
         }
 
-    }, [])
+        if (ball.current) {
+            CursorAnimation(ball.current);
+        }
+
+        setPageLoading(false);
+    }, []);
+
+    // Show a loading spinner if data isn't available yet (mostly for dev mode initial load)
+    if (pageLoading && (iconsArray.length === 0 && projectsArray.length === 0)) {
+        return (
+            <Backdrop
+                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                open={true}
+            >
+                <CircularProgress color="inherit" />
+                <Typography sx={{ ml: 2 }}>Loading your portfolio data...</Typography>
+            </Backdrop>
+        );
+    }
+
     return (
-        <Layout desc={`Vito Medlej, A lebanese professional software engineer in Beirut, Can develop all kinds of websites and web/mobile applications according to your needs`} title='Vito Medlej Fullstack Developer Personal Portfolio Website'>
+        <Layout
+            desc={`Mutiso Juma, A Kenyan professional software engineer in Nairobi, Can develop all kinds of websites and web/mobile applications according to your needs`}
+            title='Mutiso Juma Fullstack Developer Personal Portfolio Website'
+        >
+            <Head>
+                {/* Ensure your favicon is correctly linked from the public directory */}
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
 
             <Box
                 sx={{
-                margin: '0 auto',
-                color: 'white'
-            }}>
-
+                    margin: '0 auto',
+                    color: 'white'
+                }}
+            >
                 <Hero/>
                 <Perks/>
-                <Experience iconsArray={iconsArray}/>
-                <Projects projectsArray={projectsArray}/>
+                {/* Always pass arrays to prevent issues */}
+                <Experience iconsArray={iconsArray} />
+                <Projects projectsArray={projectsArray} />
                 <About/>
                 <CTA/>
 
                 <Box
                     ref={ball}
                     sx={{
-                    display: {
-                        xs: 'none',
-                        md: 'block'
-                    }
-                }}
-                    className="ball"></Box>
-
+                        display: {
+                            xs: 'none',
+                            md: 'block'
+                        }
+                    }}
+                    className="ball"
+                ></Box>
             </Box>
         </Layout>
+    );
+};
 
-    )
-}
-
-export default Home
+export default Home;
 
 export async function getStaticProps() {
-    function removeEmpty(obj : any) {
-        return Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != null && v != false));
+    function removeEmpty(obj: any) {
+        return Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != null && v !== false));
     }
+
+    let projectsArray: any[] = [];
+    let iconsArray: any[] = [];
+
     try {
-        // first, grab our Contentful keys from the .env file
         const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
         const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
 
-        // then, send a request to Contentful (using the same URL from GraphiQL)
-        const res =    await fetch(`https://graphql.contentful.com/content/v1/spaces/${space}`, {
-            method: 'POST', // GraphQL *always* uses POST requests!
+        if (!space || !accessToken) {
+            console.error("ENVIRONMENT VARIABLE ERROR: Contentful SPACE_ID or ACCESS_TOKEN are not defined.");
+            console.error("Please ensure you have a .env.local file in your project root with:");
+            console.error("NEXT_PUBLIC_CONTENTFUL_SPACE_ID=YOUR_SPACE_ID");
+            console.error("NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN=YOUR_ACCESS_TOKEN");
+            return {
+                props: {
+                    projectsArray: [],
+                    iconsArray: []
+                },
+                revalidate: 60
+            };
+        }
+
+        const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/${space}`, {
+            method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                authorization: `Bearer ${accessToken}`, // add our access token header
+                authorization: `Bearer ${accessToken}`,
             },
-            // send the query we wrote in GraphiQL as a string
             body: JSON.stringify({
-                // all requests start with "query: ", so we'll stringify that for convenience
+                // THIS IS THE GRAPHQL QUERY STRING - IT MUST BE EXACT
                 query: `
                 {
-                  projectCollection {
+                  projectsCollection {
                     items {
                       title
                       repoUrl
                       siteUrl
                       description
-                      img
+                      img {
+                        url
+                      }
                     }
                   }
-                  iconsCollection {
+                  iconCollection {
                     items {
                       filter
                       svg
@@ -92,35 +146,82 @@ export async function getStaticProps() {
                       isBackend
                     }
                   }
-                }
-                
-                  `
+                }`
             })
-        },);
+        });
+    
 
-        // grab the data from our response
-        const {data} = await res.json()
-        // const data :any = {}
-        if (!data || data?.length < 1) {
-            throw 'Error fetching data'
+        if (!res.ok) {
+            const errorText = await res.text();
+            console.error(`CONTENTFUL FETCH ERROR: HTTP Status ${res.status} - ${res.statusText}`);
+            console.error(`Response body: ${errorText}`);
+            throw new Error(`Contentful API responded with status ${res.status}`);
         }
-        let iconsArray = []
-        for (let i = 0; i < data?.iconsCollection?.items.length; i++) {
-            let clearedIcon = removeEmpty(data?.iconsCollection.items[i])
-            iconsArray.push(clearedIcon)
+
+        const { data, errors } = await res.json();
+
+        if (errors && errors.length > 0) {
+            console.error('CONTENTFUL GRAPHQL ERROR:', errors);
+            throw new Error('GraphQL errors found in Contentful response.');
         }
+
+        if (!data || !data.projectsCollection || !data.projectsCollection.items ||
+            !data.iconCollection || !data.iconCollection.items) {
+            console.warn('CONTENTFUL DATA MISSING: Expected collections or items are missing from Contentful response.');
+            return {
+                props: {
+                    projectsArray: [],
+                    iconsArray: []
+                },
+                revalidate: 60
+            };
+        }
+
+       // projectsArray = data.projectsCollection.items;
+
+       // === CHANGE STARTS HERE ===
+        // Map over the items to transform the 'img' object into just its 'url'
+        projectsArray = data.projectsCollection.items.map((projectItem: any) => ({
+            title: projectItem.title,
+            repoUrl: projectItem.repoUrl,
+            siteUrl: projectItem.siteUrl,
+            description: projectItem.description,
+            // Ensure projectItem.img exists before trying to access .url
+            img: projectItem.img ? projectItem.img.url : null // Set to null if img is missing
+        }));
+        // === CHANGE ENDS HERE ===
+
+        for (let i = 0; i < data.iconCollection.items.length; i++) {
+            let clearedIcon = removeEmpty(data.iconCollection.items[i]);
+            iconsArray.push(clearedIcon);
+        }
+
         return {
             props: {
-                projectsArray: data?.projectCollection.items,
+                projectsArray,
                 iconsArray
-            }
+            },
+            revalidate: 60
+        };
+
+    } catch (err: any) {
+        console.error('FINAL GETSTATICPROPS ERROR:', err);
+
+        if (err instanceof Error) {
+            console.error('Error message:', err.message);
+        } else if (typeof err === 'string') {
+            console.error('Error string:', err);
+        } else {
+            console.error('Unknown error object caught:', err);
         }
-    } catch (err) {
-        console.log('err: ', err);
+
         return {
             props: {
-                data: null
-            }
-        }
+                projectsArray: [],
+                iconsArray: []
+            },
+            revalidate: 60
+        };
     }
 }
+

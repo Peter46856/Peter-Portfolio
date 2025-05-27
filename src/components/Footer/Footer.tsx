@@ -17,9 +17,9 @@ function Copyright() {
 
             <Typography variant='h1' fontSize='1em'>
                 {'Copyright © '}
-                <Link color="inherit" target='_blank'  rel="noreferrer" href="https://onbeirut.onrender.com">
-                    onbeirut.onrender.com
-                </Link>{' '} {new Date().getFullYear()}
+                
+                    MutisoJuma@Quantum Quill Developers
+                {' '} {new Date().getFullYear()}
                 {'.'}
             </Typography>
         </Box>
@@ -65,9 +65,11 @@ function Footer() {
 
                         <Box sx={styles}>
                             <Typography variant='h3' fontSize='1em'>
-                                Hi, my name is Vito Medlej and I have created the OnBeirut Agency which aims to solve various issues small lebanese
-                                businesses face. You are free to use the website as a template for yourself as long as you
-                                give credit.
+                                 Hello, my name is Peter Juma Mutiso. 
+                                 I am a Kenyan software developer specializing in web development, with a strong focus on building scalable, user-centric digital solutions. 
+                                 My passion lies in leveraging technology to empower communities and businesses across Africa by addressing local challenges with innovative and practical applications. 
+                                 With a commitment to continuous learning and excellence, I aim to contribute meaningfully to the continent's growing digital landscape through impactful and sustainable software development.
+
                             </Typography>
                         </Box>
 
@@ -92,10 +94,10 @@ function Footer() {
                     <Grid item xs={12} sm={3} md={3}>
                         <Typography variant='h1' fontSize='1.4em' fontWeight='400'>Contact</Typography>
                         <Box className='link' sx={styles}>
-                            <a target='_blank' rel="noreferrer" href='https://github.com/VitoMedlej'>Github</a>
-                            <Typography variant='h1' fontSize='1em'>vito.medlej@gmail.com</Typography>
-                            <Typography variant='h1' fontSize='1em'>Lebanon/Beirut</Typography>
-                            <Typography variant='h1' fontSize='1em'>+961/81826445</Typography>
+                            <a target='_blank' rel="noreferrer" href='https://github.com/Peter46856'>Github</a>
+                            <Typography variant='h1' fontSize='1em'>pjuma655@gmail.com</Typography>
+                            <Typography variant='h1' fontSize='1em'>Nairobi - Kenya</Typography>
+                            <Typography variant='h1' fontSize='1em'>+254718279984</Typography>
                         </Box>
                     </Grid>
                 </Grid>

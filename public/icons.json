@@ -1,0 +1,62 @@
+[
+  {
+    "title": "HTML5",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-html5\"><path d=\"M2 3h20l-2 16L12 22 4 19Z\"/><path d=\"M5 8h14M6 12h12M10 16h4\"/></svg>",
+    "isBackend": false,
+    "filter": false
+  },
+  {
+    "title": "CSS3",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-css3\"><path d=\"M2 3h20l-2 16L12 22 4 19Z\"/><path d=\"M5 8h14M6 12h12M10 16h4\"/></svg>",
+    "isBackend": false,
+    "filter": false
+  },
+  {
+    "title": "JavaScript",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-javascript\"><path d=\"M2 3h20l-2 16L12 22 4 19Z\"/><path d=\"M5 8h14M6 12h12M10 16h4\"/></svg>",
+    "isBackend": false,
+    "filter": true
+  },
+  {
+    "title": "React",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-react\"><path d=\"M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z\"/><path d=\"M9 12h6M12 9v6M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10 10 10 0 0 1-10-10A10 10 0 0 1 12 2Z\"/></svg>",
+    "isBackend": false,
+    "filter": false
+  },
+  {
+    "title": "Next.js",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-nextjs\"><path d=\"M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2Z\"/><path d=\"m8 16 4-9 4 9\"/><path d=\"M11 12h2\"/></svg>",
+    "isBackend": false,
+    "filter": true
+  },
+  {
+    "title": "Node.js",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-nodejs\"><path d=\"M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z\"/><path d=\"M9 12h6M12 9v6M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10 10 10 0 0 1-10-10A10 10 0 0 1 12 2Z\"/></svg>",
+    "isBackend": true,
+    "filter": false
+  },
+  {
+    "title": "Express.js",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-expressjs\"><path d=\"M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z\"/><path d=\"M9 12h6M12 9v6M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10 10 10 0 0 1-10-10A10 10 0 0 1 12 2Z\"/></svg>",
+    "isBackend": true,
+    "filter": false
+  },
+  {
+    "title": "MongoDB",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-database\"><path d=\"M12 22v-4m-7-2v-4m14 4v-4m-7 4V6m-7 2v-4m14 4v-4\"/><ellipse cx=\"12\" cy=\"6\" rx=\"10\" ry=\"3\"/><path d=\"M2 12h20\"/><ellipse cx=\"12\" cy=\"18\" rx=\"10\" ry=\"3\"/><path d=\"M2 12c0 1.66 4 3 10 3s10-1.34 10-3\"/></svg>",
+    "isBackend": true,
+    "filter": false
+  },
+  {
+    "title": "Git",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-git-branch\"><line x1=\"6\" x2=\"6\" y1=\"3\" y2=\"15\"/><path d=\"M18 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z\"/><path d=\"M18 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z\"/><path d=\"M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z\"/><path d=\"M18 6v.5A4.5 4.5 0 0 1 13.5 11H6\"/></svg>",
+    "isBackend": true,
+    "filter": true
+  },
+  {
+    "title": "VS Code",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-code\"><polyline points=\"16 18 22 12 16 6\"/><polyline points=\"8 6 2 12 8 18\"/></svg>",
+    "isBackend": true,
+    "filter": true
+  }
+]

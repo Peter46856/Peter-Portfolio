@@ -69,3 +69,28 @@ export interface IProjectCard extends IProjects {
     isReversed?: boolean;
     className?: string;
 }
+
+
+
+// This interface defines the structure of a single blog post
+export interface BlogPost {
+    sys: { id: string };
+    title: string;
+    slug: string;
+    description: string;
+    publishDate: string;
+    featuredImage: { url: string; width: number; height: number; };
+    // You might add other fields here that you fetch for the full post,
+    // like 'content', 'author', 'tags', etc., if needed for shared logic
+}
+
+// If you have other blog-related types, you can add them here too.
+
+export interface IBlogPost {
+    sys: { id: string };
+    title: string;
+    slug: string;
+    description: string;
+    publishDate: string;
+    featuredImage: { url: string; width: number; height: number; };
+}

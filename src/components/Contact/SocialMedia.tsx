@@ -4,14 +4,14 @@ import SocialMediaIcon from './SocialMediaIcon';
 export const SocialMediaArray = [
     {
         title: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/vito-medlej-743b1b241/',
+        href: 'https://www.linkedin.com/in/peter-juma-244967263',
         color: '#0e76a8',
         svg: 'https://www.svgrepo.com/show/138936/linkedin.svg'
 
     }, {
         color: '#171515',
         title: 'Github',
-        href: 'https://github.com/VitoMedlej',
+        href: 'https://github.com/Peter46856',
         svg: 'https://www.svgrepo.com/show/343674/github.svg'
     }, {
         title: 'Facebook',

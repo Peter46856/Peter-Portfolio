@@ -1,9 +1,17 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
     images: {
-        domains: ['open.cruip.com','ucarecdn.com', 'www.svgrepo.com','images.unsplash.com', 'res.cloudinary.com']
+        domains: [
+            'open.cruip.com',
+            'ucarecdn.com',
+            'www.svgrepo.com',
+            'images.unsplash.com',
+            'res.cloudinary.com',
+            'images.ctfassets.net' // <--- ADD THIS LINE
+        ]
     },
     webpack(config) {
         config
@@ -15,4 +23,4 @@ const nextConfig = {
     }
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;

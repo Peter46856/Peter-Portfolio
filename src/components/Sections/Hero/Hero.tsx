@@ -53,10 +53,10 @@ const Hero = () => {
                             textAlign: 'left',
                             transform: 'translateY(40px)',
                             opacity: 0,
-                            pt: '1em',
-                            fontWeight: '600'
+                            pt: '0',
+                            fontWeight: '550'
                         }}>
-                      
+                        Lets build something great together,,
                         The place where your business expands
                         </Typography>
                         <Typography
@@ -72,7 +72,9 @@ const Hero = () => {
                             maxWidth: '570px',
                             fontWeight: '300'
                         }}>
-                           Hey there! Call me Vito Medlej. I enjoy creating kickass websites and web/mobile apps, ones that suit your desires and needs using latest technologies and cleanest design patterns. 
+                          Hi, I'm Peter Juma Mutiso, a Computer Science student at Multimedia University of Kenya. 
+                          Together with my talented team, I build robust websites and intuitive web/mobile apps that help businesses grow and thrive in the digital world. 
+                          Our goal is to translate your unique needs and desires into clean, modern, and effective digital experiences using cutting-edge tech.
                         </Typography>
 
                         <Box
@@ -161,6 +163,7 @@ const Hero = () => {
                             flexDirection: 'column',
                             position: 'relative',
                             height: '460px',
+                            //pt: '2em',
                             boxShadow: {
                                 xs: '.5em 3em 0 #313131 ',
                                 sm: '2em 3em 0px #313131'
@@ -174,11 +177,12 @@ const Hero = () => {
 
                                 style={{
                                 opacity: 0,
-                                borderRadius: '6px',
+                                borderRadius: '50%',
                                 zIndex: '2'
                             }}
                                 className='img1'
-                                src={`https://ucarecdn.com/150b60a1-4ef3-4ec8-8f1a-d90a7ea26c85/-/crop/1129x1256/0,194/-/preview/3000x3000/`}
+                                //src={`https://ucarecdn.com/150b60a1-4ef3-4ec8-8f1a-d90a7ea26c85/-/crop/1129x1256/0,194/-/preview/3000x3000/`}
+                                src={`https://res.cloudinary.com/dqbo6glmn/image/upload/c_crop,w_960,h_979,x_0,y_0/v1748205203/portfolio-profile_ku070e.jpg`}
                                 alt="Personal Image"/>
                             <Box
                                 className='gradientBg'
