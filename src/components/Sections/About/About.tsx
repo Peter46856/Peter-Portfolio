@@ -67,7 +67,7 @@ const About = () => {
                             alt='Personal Image'
                             className='img1 '
                             fill // Retain layout='fill' for responsive image within its parent Box
-                            src={`https://res.cloudinary.com/dwcu3wcol/image/upload/v1659776757/20211226_154523_-_Copy_hhy2kp.jpg`}
+                            src={`https://res.cloudinary.com/dqbo6glmn/image/upload/v1748455761/computer-program-coding-screen_dlw4vd.jpg`}
                         />
                     </Box>
 
