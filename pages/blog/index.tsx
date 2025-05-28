@@ -268,7 +268,7 @@ const BlogPage = ({ posts }: BlogPageProps) => {
 
     return (
         // Wrap your page content with the Layout component
-        
+
         <Layout
             desc={`Mutiso Juma, A Kenyan professional software engineer in Nairobi, Can develop all kinds of websites and web/mobile applications according to your needs`}
             title='Mutiso Juma Fullstack Developer Personal Portfolio Website'>
