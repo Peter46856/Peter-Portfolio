@@ -2,7 +2,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     // output: 'export', // This is commented out, so it won't export as static HTML
-    distDir: 'build', // This will put your build output in a 'build' folder instead of '.next'
+   // distDir: 'build', // This will put your build output in a 'build' folder instead of '.next'
     reactStrictMode: true,
     basePath: process.env.NODE_ENV === 'production' ? '/Peter-Portfolio' : '',
     images: { // This is the single, correct images configuration
