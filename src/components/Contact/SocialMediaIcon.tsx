@@ -1,3 +1,5 @@
+
+
 import { Box, Typography } from "@mui/material"
 import { centeredStyles } from "../Sections/Perks/Perks"
 import Image from 'next/image'
@@ -16,28 +18,32 @@ const SocialMediaIcon = ({title, svg, href, filter} : ISocialMedia) => {
                 sm: '25%'
             },
             margin: '0 auto',
-            
         }}>
             <a target="_blank" rel="noreferrer" href={href}>
 
                 <Box
                     sx={{
-                    ...centeredStyles,
-                    width: {
-                        xs: '35px'
-                    },
-                    height: {
-                        xs: '35px'
-                    },
-                  
-                }}>
+                        ...centeredStyles,
+                        width: {
+                            xs: '35px' // This parent Box still defines the container size
+                        },
+                        height: {
+                            xs: '35px' // This parent Box still defines the container size
+                        },
+                        // You can remove `position: 'relative'` now if you want,
+                        // as `width`/`height` props don't require it.
+                        // However, keeping it won't hurt and might be useful for other children.
+                        // position: 'relative',
+                    }}>
 
                     <Image
                         alt='Icon'
                         className={`${filter
                         ? 'filter '
                         : ''} icon`}
-                        fill
+                        // REMOVE 'fill' prop
+                        width={5}   // <-- ADD THIS!
+                        height={5}  // <-- ADD THIS!
                         src={svg || ''}/>
                 </Box>
                 <Typography
