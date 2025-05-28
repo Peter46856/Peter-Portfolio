@@ -57,7 +57,7 @@ const Home: NextPage<HomeProps> = ({projectsArray, iconsArray}) => {
         >
             <Head>
                 {/* Ensure your favicon is correctly linked from the public directory */}
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="https://res.cloudinary.com/dr4ssexud/image/upload/v1747987472/default_hjvzpb.png" />
             </Head>
 
             <Box

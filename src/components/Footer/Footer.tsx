@@ -1,5 +1,4 @@
-import gsap from 'gsap';
-import { Box, Typography, Divider, Grid } from '@mui/material';
+import { Box, Typography, Divider } from '@mui/material';
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -52,6 +51,16 @@ const styles = {
 function Footer() {
     const router = useRouter(); // Initializes Next.js router for programmatic navigation
 
+    // Function to handle smooth scrolling to sections
+    // Corrected: Added explicit type 'string' for the 'id' parameter
+    const handleScrollToSection = (id: string) => {
+        router.push(`#${id}`); // Updates the URL hash, useful for direct linking and browser history
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' }); // Smoothly scrolls the element into view
+        }
+    };
+
     return (
         <Box>
             {/* Horizontal divider line at the top of the footer content */}
@@ -62,68 +71,81 @@ function Footer() {
                     color: 'white', // Sets the default text color for this section
                     minHeight: '200px', // Sets a minimum height for the footer content area
                     display: 'flex', // Uses flexbox for internal layout
-                    margin: '0 auto' // Centers the box horizontally on the page
+                    margin: '0 auto', // Centers the box horizontally on the page
+                    flexDirection: { xs: 'column', md: 'row' }, // Stack vertically on small, row on medium+
+                    justifyContent: 'space-around', // Distribute space
+                    alignItems: { xs: 'center', md: 'flex-start' }, // Center on small, align to start on medium+
+                    py: '2em', // Vertical padding
+                    px: { xs: '3vw', lg: 'auto' }, // Horizontal padding
+                    gap: '2em', // Add gap between sections
+                    maxWidth: 'lg' // Apply max width directly
                 }}
             >
-                <Grid
+                {/* About Section */}
+                <Box
                     sx={{
-                        gap: '1.5em', // Sets a gap between grid items
-                        mx: {
-                            xs: '3vw', // Horizontal margin for extra small screens (3% of viewport width)
-                            lg: 'auto' // Auto horizontal margin for large screens to center the grid
-                        },
-                        my: '2em' // Vertical margin for the grid container
+                        flex: { md: 5 }, // Allocate flex space similar to Grid
+                        maxWidth: { xs: '100%', sm: '80%', md: '35%' }, // Control max width for responsiveness
+                        textAlign: { xs: 'center', md: 'left' } // Center text on small, left-align on medium+
                     }}
-                    maxWidth='lg' // Limits the maximum width of the grid container
-                    container // Designates this Grid as a flex container for its direct children (Grid items)
                 >
-                    {/* About Section */}
-                    {/* This Grid item takes 12 columns on extra-small, 6 on small, and 5 on medium and larger screens */}
-                    <Grid item xs={12} sm={6} md={5}>
-                        <Typography variant='h1' fontSize='1.4em' fontWeight='400'>About</Typography>
-                        <Box sx={styles}>
-                            <Typography variant='h3' fontSize='1em'>
-                                Hello, my name is Peter Juma Mutiso.
-                                I am a Kenyan software developer specializing in web development, with a strong focus on building scalable, user-centric digital solutions.
-                                My passion lies in leveraging technology to empower communities and businesses across Africa by addressing local challenges with innovative and practical applications.
-                                With a commitment to continuous learning and excellence, I aim to contribute meaningfully to the continent&apos;s growing digital landscape through impactful and sustainable software development.
-                            </Typography>
-                        </Box>
-                    </Grid>
+                    <Typography variant='h1' fontSize='1.4em' fontWeight='400'>About</Typography>
+                    <Box sx={styles}>
+                        <Typography variant='h3' fontSize='1em'>
+                            Hello, my name is Peter Juma Mutiso.
+                            I am a Kenyan software developer specializing in web development, with a strong focus on building scalable, user-centric digital solutions.
+                            My passion lies in leveraging technology to empower communities and businesses across Africa by addressing local challenges with innovative and practical applications.
+                            With a commitment to continuous learning and excellence, I aim to contribute meaningfully to the continent&apos;s growing digital landscape through impactful and sustainable software development.
+                        </Typography>
+                    </Box>
+                </Box>
 
-                    {/* Links Section */}
-                    {/* This Grid item takes 12 columns on extra-small, 4 on small, and 3 on medium and larger screens */}
-                    <Grid item xs={12} sm={4} md={3}>
-                        <Typography variant='h1' fontSize='1.4em' fontWeight='400'>Links</Typography>
-                        <Box className='link' sx={styles}>
-                            {/* Home link with GSAP scroll animation */}
-                            <Typography
-                                className='FooterLink'
-                                onClick={() => { router.push('/'); gsap.to(window, { duration: .8, scrollTo: `#hero` }) }}
-                            >Home</Typography>
-                            {/* Contact link using Next.js Link component */}
-                            <Link href='/contact'>Contact</Link>
-                            {/* About link with GSAP scroll animation */}
-                            <Typography
-                                className='FooterLink'
-                                onClick={() => { router.push('/'); gsap.to(window, { duration: .5, scrollTo: `#about` }) }}
-                            >About</Typography>
-                        </Box>
-                    </Grid>
+                {/* Links Section */}
+                <Box
+                    sx={{
+                        flex: { md: 3 }, // Allocate flex space similar to Grid
+                        maxWidth: { xs: '100%', sm: '80%', md: '25%' },
+                        textAlign: { xs: 'center', md: 'left' }
+                    }}
+                >
+                    <Typography variant='h1' fontSize='1.4em' fontWeight='400'>Links</Typography>
+                    <Box className='link' sx={styles}>
+                        {/* Home link with native scroll animation */}
+                        <Typography
+                            className='FooterLink'
+                            onClick={() => handleScrollToSection('hero')}
+                            sx={{ cursor: 'pointer' }} // Add cursor pointer to indicate it's clickable
+                        >Home</Typography>
+                        {/* Contact link using Next.js Link component */}
+                        <Link href='/contact' passHref>
+                            <Typography className='FooterLink' >Contact</Typography>
+                        </Link>
+                        {/* About link with native scroll animation */}
+                        <Typography
+                            className='FooterLink'
+                            onClick={() => handleScrollToSection('about')}
+                            sx={{ cursor: 'pointer' }} // Add cursor pointer to indicate it's clickable
+                        >About</Typography>
+                    </Box>
+                </Box>
 
-                    {/* Contact Section */}
-                    {/* This Grid item takes 12 columns on extra-small, 3 on small, and 3 on medium and larger screens */}
-                    <Grid item xs={12} sm={3} md={3}>
-                        <Typography variant='h1' fontSize='1.4em' fontWeight='400'>Contact</Typography>
-                        <Box className='link' sx={styles}>
-                            {/* GitHub link, opens in a new tab */}
-                            <a target='_blank' rel="noreferrer" href='https://github.com/Peter46856'>Github</a>
-                            <Typography variant='h1' fontSize='1em'>pjuma655@gmail.com</Typography>
-                            <Typography variant='h1' fontSize='1em'>Nairobi - Kenya</Typography>
-                            <Typography variant='h1' fontSize='1em'>+254718279984</Typography>
-                        </Box>
-                    </Grid>
-                </Grid>
+                {/* Contact Section */}
+                <Box
+                    sx={{
+                        flex: { md: 3 }, // Allocate flex space similar to Grid
+                        maxWidth: { xs: '100%', sm: '80%', md: '25%' },
+                        textAlign: { xs: 'center', md: 'left' }
+                    }}
+                >
+                    <Typography variant='h1' fontSize='1.4em' fontWeight='400'>Contact</Typography>
+                    <Box className='link' sx={styles}>
+                        {/* GitHub link, opens in a new tab */}
+                        <a target='_blank' rel="noreferrer" href='https://github.com/Peter46856'>Github</a>
+                        <Typography variant='h1' fontSize='1em'>pjuma655@gmail.com</Typography>
+                        <Typography variant='h1' fontSize='1em'>Nairobi - Kenya</Typography>
+                        <Typography variant='h1' fontSize='1em'>+254718279984</Typography>
+                    </Box>
+                </Box>
             </Box>
             {/* Includes the Copyright component at the very bottom of the footer */}
             <Copyright />

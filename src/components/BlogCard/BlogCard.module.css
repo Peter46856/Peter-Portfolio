@@ -53,17 +53,22 @@
     align-items: flex-start; /* Align items to the top */
   }
 
-  .blogImageContainer {
-    min-width: 40%;
-    max-width: 40%; /* Image takes 40% of the card width */
-    margin-right: 25px; /* Space to the right of the image */
-    margin-bottom: 0; /* Remove bottom margin */
-    max-height: none; /* Remove height limit on large screens */
-  }
+  
 
-  .blogImageContainer img {
-    height: auto; /* Reset image height on large screens */
-  }
+  
+
+  /* src/components/BlogCard/BlogCard.module.css */
+
+.blogImageContainer {
+  position: relative; /* Essential for fill prop */
+  width: 100%;
+  height: 200px; /* Or a fixed height, or aspect-ratio */
+  /* overflow: hidden; /* Useful if image goes outside container */
+}
+
+.blogImageContainer img { /* Target the actual image rendered by Next.js */
+  object-fit: cover;
+}
 
   .blogTextContentWrapper {
     flex: 1; /* Text content wrapper takes remaining space */

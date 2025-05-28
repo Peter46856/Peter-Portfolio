@@ -1,7 +1,4 @@
-
-// Example BlogCard Component (create this in src/components/BlogCard.tsx)
-
-
+// src/components/BlogCard/BlogCard.tsx
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -11,17 +8,19 @@ import styles from './BlogCard.module.css'; // Import the CSS module
 const BlogCard = ({ post }: { post: IBlogPost }) => {
   return (
     <div className={styles.blogCard}>
+      {/* Remove the <a> tag directly inside <Link> */}
       <Link href={`/blog/${post.slug}`} passHref>
-        <a className={styles.blogCardContent}>
+        {/* The content that you want to be clickable should be directly inside <Link> */}
+        {/* If you need to style the clickable area, apply classes/styles to the container directly */}
+        <div className={styles.blogCardContent}>
           <div className={styles.blogImageContainer}>
             {post.featuredImage && (
               <Image
                 src={post.featuredImage.url}
                 alt={post.title}
-                width={post.featuredImage.width}
-                height={post.featuredImage.height}
-                layout="responsive"
-                objectFit="cover"
+                
+                fill // Use fill instead of layout="responsive"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             )}
           </div>
@@ -30,13 +29,10 @@ const BlogCard = ({ post }: { post: IBlogPost }) => {
             <p>{post.description}</p>
             <small>{new Date(post.publishDate).toLocaleDateString()}</small>
           </div>
-        </a>
+        </div>
       </Link>
     </div>
   );
 };
 
 export default BlogCard;
-
-
-
