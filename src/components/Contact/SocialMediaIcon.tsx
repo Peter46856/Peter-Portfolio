@@ -42,8 +42,8 @@ const SocialMediaIcon = ({title, svg, href, filter} : ISocialMedia) => {
                         ? 'filter '
                         : ''} icon`}
                         // REMOVE 'fill' prop
-                        width={5}   // <-- ADD THIS!
-                        height={5}  // <-- ADD THIS!
+                        width={20}   // <-- ADD THIS!
+                        height={20}  // <-- ADD THIS!
                         src={svg || ''}/>
                 </Box>
                 <Typography
