@@ -96,7 +96,7 @@ const About = () => {
                                 }}
                                 fontWeight='600'
                             >
-                                About Me, I&apos;m Peter Juma Mutiso
+                                About Me
                             </Typography>
                             <Typography
                                 variant='h2'
@@ -110,7 +110,7 @@ const About = () => {
                                     margin: { xs: '0 auto', md: '0' } // Center text on small screens, remove margin auto on md+
                                 }}
                             >
-                                A 20-year-old Kenya-based software developer. I first started developing web pages using HTML and JavaScript, and now I&apos;ve realized I have a lot of passion in web and mobile app development, and I&apos;ve been building and working on that for the past 3 years now.
+                                Kenya-based software developer. I first started developing web pages using HTML, JavaScript CSS and WordPress plugins, and now I&apos;ve realized I have a lot of passion in web and mobile app development, and I&apos;ve been building and working on that for the past 3 years now.
                             </Typography>
                         </Box>
                         <Typography
@@ -128,7 +128,7 @@ const About = () => {
                             Being a computer science student at Multimedia University of Kenya has made me appreciate technology; thus, I&apos;m simultaneously studying various software development frameworks, mainly for Information Systems. Business and technology are both my passions.
                         </Typography>
                         <ReadMore>
-                            Aside from working hard, I tend to enjoy simple things like reading, gaming, sports, and many more extra-curricular activities. Finally, I&apos;m a teamwork enthusiast and enjoy learning new things from friends and other experts. Therefore, if you&apos;re interested in working with me, please don&apos;t hesitate to send me a message here.
+                            Besides web  design and development, I am also intrested on blockchain and web 3 the future of web development and Fintech. Finally, I&apos;m a teamwork enthusiast and enjoy learning new things from friends and other experts. Therefore, if you&apos;re interested in working with me, please don&apos;t hesitate to send me a message here.
                         </ReadMore>
                     </Box>
                 </Box>

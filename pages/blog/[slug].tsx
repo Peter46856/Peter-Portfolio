@@ -104,7 +104,7 @@ interface SingleBlogPostPageProps {
 const BlogPage = ({ post }: SingleBlogPostPageProps) => {
   const colorMode = useContext(ColorModeContext);
   const textColor = colorMode.mode === 'light' ? 'black' : 'white';
-  const bgColor = colorMode.mode === 'light' ? 'white' : 'grey';
+  const bgColor = colorMode.mode === 'light' ? 'white' : 'dark';
   const mutedTextColor = colorMode.mode === 'light' ? 'textSecondary' : '#bbb';
 
   // Handle loading or post not found *within* the Layout

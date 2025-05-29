@@ -1,4 +1,5 @@
 import { Box, Typography, Divider } from '@mui/material';
+import { blue, blueGrey } from '@mui/material/colors';
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -62,8 +63,22 @@ function Footer() {
     };
 
     return (
-        <Box>
-            {/* Horizontal divider line at the top of the footer content */}
+        <Box
+            sx={{
+                // Add borderRadius to the main Box containing the footer
+                // Adjust the value (e.g., '16px', '50px', '20%') to control the roundness
+                borderRadius: '30px', 
+                overflow: 'hidden',
+                margin: '30px',
+                borderColor: 'white',
+                borderStyle: 'inherit'
+                 // Ensures content respects the rounded corners
+                // You might want to add a background color if your footer isn't full-width 
+                // and you want the corners to be visible against the page background.
+                // backgroundColor: 'primary.main', // Example background color
+            }}
+        >
+           
             <Divider />
             <Box
                 sx={{
@@ -78,10 +93,11 @@ function Footer() {
                     py: '2em', // Vertical padding
                     px: { xs: '3vw', lg: 'auto' }, // Horizontal padding
                     gap: '2em', // Add gap between sections
-                    maxWidth: 'lg' // Apply max width directly
+                    maxWidth: 'lg', // Apply max width directly
+                    
                 }}
             >
-                {/* About Section */}
+                {/*
                 <Box
                     sx={{
                         flex: { md: 5 }, // Allocate flex space similar to Grid
@@ -97,6 +113,29 @@ function Footer() {
                             My passion lies in leveraging technology to empower communities and businesses across Africa by addressing local challenges with innovative and practical applications.
                             With a commitment to continuous learning and excellence, I aim to contribute meaningfully to the continent&apos;s growing digital landscape through impactful and sustainable software development.
                         </Typography>
+                    </Box>
+                </Box>
+                *}
+
+                {/* Products Section */}
+                <Box
+                    sx={{
+                        flex: { md: 3 }, // Allocate flex space similar to Grid
+                        maxWidth: { xs: '100%', sm: '80%', md: '25%' },
+                        textAlign: { xs: 'center', md: 'left' }
+                    }}
+                >
+                    <Typography variant='h1' fontSize='1.4em' fontWeight='400'>Product & Services</Typography>
+                    <Box  sx={styles}>
+                       
+                        <Typography><li>Online Stores</li></Typography>
+                        <Typography><li>Blogs</li></Typography>
+                        <Typography><li>Personal Portfolio</li></Typography>
+                        <Typography><li>Marketing</li></Typography>
+                        <Typography><li>Database Management</li></Typography>
+                        <Typography><li>Softtware Maintainance</li></Typography>
+                        
+                        
                     </Box>
                 </Box>
 

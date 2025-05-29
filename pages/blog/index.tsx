@@ -44,7 +44,7 @@ interface BlogPageProps {
 const BlogPage = ({ posts }: BlogPageProps) => {
     const colorMode = useContext(ColorModeContext);
     const textColor = colorMode.mode === 'light' ? 'black' : 'white';
-    const bgColor = colorMode.mode === 'light' ? 'white' : 'grey';
+    const bgColor = colorMode.mode === 'light' ? 'white' : 'dark';
 
     return (
         <Layout
