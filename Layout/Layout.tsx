@@ -27,10 +27,10 @@ const Layout = ({navbarSx, title ,children ,desc } : ILayout) => {
 <meta name="description" content={`${desc || 'Mutiso Juma personal portfolio, An expert in UI/UX and building complex websites and applications'}`} />
 
 
-<meta property="og:title" content="Mutiso Juma Personal Portfolio | Lebanese Web Developer" />
+<meta property="og:title" content="Mutiso Juma Personal Portfolio | Web Developer" />
 
 
-<meta property="og:url" content="https://elvito.netlify.app" />
+{/*<meta property="og:url" content="https://elvito.netlify.app" />*/}
 
 
 <meta property="og:description" content="Mutiso Juma | Web Developer based in Lebanon. And this is my Portfolio and my blog "/>
