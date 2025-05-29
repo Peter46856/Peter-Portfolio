@@ -66,7 +66,7 @@ export const SocialMediaArray = [
         svg: 'https://www.svgrepo.com/show/343674/github.svg'
     }, {
         title: 'Facebook',
-        href: "https://www.facebook.com/vito.medlej.5/",
+        href: "https://www.facebook.com/",
         color: '#4267B2',
         svg: 'https://www.svgrepo.com/show/158427/facebook.svg'
     }
