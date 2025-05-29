@@ -196,7 +196,7 @@ const Hero = () => {
                     >
                         View Projects
                     </Button>
-                    <a href={`https://drive.google.com/drive/u/0/my-drive`} rel="noreferrer" target='_blank'>
+                    <a href={`https://docs.google.com/document/d/1mV9eYfteEm0aR8q2v3gRvs5-gKAI7uJR/edit?usp=drive_link&ouid=117500084321364085019&rtpof=true&sd=true`} rel="noreferrer" target='_blank'>
                         <Button
                             className='b2'
                             sx={{
