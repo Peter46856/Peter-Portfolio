@@ -116,28 +116,35 @@ function Footer() {
                     </Box>
                 </Box>
                 *}
-
                 {/* Products Section */}
-                <Box
+               <Box
                     sx={{
-                        flex: { md: 3 }, // Allocate flex space similar to Grid
+                         flex: { md: 3 }, // Allocate flex space similar to Grid
                         maxWidth: { xs: '100%', sm: '80%', md: '25%' },
                         textAlign: { xs: 'center', md: 'left' }
                     }}
                 >
-                    <Typography variant='h1' fontSize='1.4em' fontWeight='400'>Product & Services</Typography>
-                    <Box  sx={styles}>
-                       
-                        <Typography><li>Online Stores</li></Typography>
-                        <Typography><li>Blogs</li></Typography>
-                        <Typography><li>Personal Portfolio</li></Typography>
-                        <Typography><li>Marketing</li></Typography>
-                        <Typography><li>Database Management</li></Typography>
-                        <Typography><li>Softtware Maintainance</li></Typography>
-                        
-                        
+                   <Typography variant='h1' fontSize='1.4em' fontWeight='400'>Product & Services</Typography>
+                     {/* Corrected: Using Box with component="ul" for a semantic unordered list */}
+                        <Box 
+                         component="ul" // This tells MUI to render this Box as an <ul> element
+                            sx={{ 
+                               ...styles, // Apply your existing flex styles
+                               listStyle: 'disc', // Ensures standard bullet points (disc is default)
+                               pl: '20px', // Add padding-left for bullet indentation
+                               mt: '0', // Adjust margin-top if inheriting from 'styles' causes extra space
+                               gap: '10px' // Adjust gap between list items if needed
+                            }}
+                        >
+                            {/* Each list item must be directly inside the <ul> or <Box component="ul"> */}
+                            <li><Typography>Online Stores</Typography></li>
+                            <li><Typography>Blogs</Typography></li>
+                            <li><Typography>Personal Portfolio</Typography></li>
+                            <li><Typography>Marketing</Typography></li>
+                            <li><Typography>Database Management</Typography></li>
+                            <li><Typography>Software Maintenance</Typography></li> {/* Corrected typo: Maintainance -> Maintenance */}
+                        </Box>
                     </Box>
-                </Box>
 
                 {/* Links Section */}
                 <Box
